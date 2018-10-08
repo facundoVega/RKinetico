@@ -1,17 +1,38 @@
+ 
+        
+<div class="alert">
+    <div class="mensaje">
+        <h2>¿Seguro que desea cerrar sesi&oacute;n?</h2>
+        <button ion-button color="light" outline (click)="SetearCerrar('aceptar')">SI</button>
+        <button ion-button color="light" outline (click)="SetearCerrar('cancelar')">NO</button>
+    </div>
+</div>
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+        <ion-toolbar>
+                <span class="userHome">{{user}}</span>
+          <ion-buttons end>
+            <button ion-button icon-only color="light" (click)="Logout()" >
+              <ion-icon ios="ios-power"  class="iconLogout" md="md-power"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-toolbar>
 </ion-header>
+<ion-content no-bounce class="ContenidoHome">
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<div class="chats">
+    <button  class="chat1"  (click)="irAPag('cosasLindas')">
+     <span  id="span3">Cosas lindas</span>
+     
+    </button>
+
+    <button  class="chat2"  (click)="irAPag('cosasFeas')">
+        <span id="span1" >Cosas feas</span>
+        
+</button>
+
+</div>
+
+
+
 </ion-content>
+

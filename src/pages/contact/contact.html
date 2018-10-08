@@ -1,17 +1,100 @@
+<!--ion-header>
+  <ion-toolbar color="dark">
+
+  
+    <ion-buttons end class="iconLogout">
+      <button ion-button icon-only color="royal" >
+        <ion-icon ios="ios-power" (click)="Logout()"  md="md-power" large></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+      
+      
+
+</ion-header-->
+<div class="spinner" [ngClass]="{'ocultar':ocultarSpinner}">
+  <img class="miSpinner pulse" src="assets/imgs/logo2.png" width="100px" height="100px">
+</div>
+<div class="alertContact">
+    <div class="mensajeContact">
+        <h2>¿Seguro que desea cerrar sesi&oacute;n?</h2>
+        <button ion-button color="light" outline (click)="SetearCerrar('aceptar')">SI</button>
+        <button ion-button color="light" outline (click)="SetearCerrar('cancelar')">NO</button>
+    </div>
+</div>
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-buttons start class="iconAtras">
+      <button ion-button icon-only color="light" (click)="IrAtrasPag()">
+        <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <span class="tituloPag" >{{lugar}}</span>
+    <ion-buttons class="graficos">
+        <button ion-button icon-only color="light" (click)="IrAPagina()">
+            <ion-icon ios="ios-stats" md="md-stats"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only color="light" (click)="Logout()" >
+        <ion-icon ios="ios-power"  class="iconLogout" md="md-power"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+<ion-content #content class="ContenidoHome">
+
+ 
+<div id="top"></div>
+
+
+<ion-slides #Slides *ngIf="fotos.length > 0">
+  <ion-slide *ngFor="let foto of fotos" class="slide">
+    <img class="laFoto" [src]="foto.valor.foto"  width="100%" height="100%">
+      
+    <div class="userVoto">
+       <span class="fecha">{{foto.valor.fecha}}</span>
+       <h1 class="usuario">{{foto.valor.usuario}}</h1>
+       <span class="voto">{{foto.valor.votos}}</span> <button class="voto1" [id]="foto.valor.clave" (click)="Votar(foto.valor.clave, foto.valor.votos, foto.valor.foto, foto.valor.usuario, foto.valor.fecha)" ion-button color="danger" [disabled]="foto.valor.habilitado" >Votar </button>
+    </div>
+  </ion-slide>
+
+</ion-slides>
+   
+  
+  
+    <!--div class="listaFotos" *ngIf="fotos.length > 0">
+      <div class="foto" *ngFor="let foto of fotos">
+
+       <img class="laFoto" [src]="foto.valor.foto"  >
+      
+       <div class="userVoto">
+          <span class="fecha">{{foto.valor.fecha}}</span>
+          <h1 class="usuario">{{foto.valor.usuario}}</h1>
+          <span class="voto">{{foto.valor.votos}}</span> <button class="voto1" [id]="foto.valor.clave" (click)="Votar(foto.valor.clave, foto.valor.votos, foto.valor.foto, foto.valor.usuario, foto.valor.fecha)" ion-button color="danger" [disabled]="foto.valor.habilitado" >Votar </button>
+       </div>
+      </div>
+    </div-->
+   
+
+   <h1> VALOR DE X:{{x}}</h1>
+   <h1> VALOR DE Y:{{y}}</h1>
+   <h1> VALOR DE Z:{{z}}</h1>
+  
+    
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-buttons start class="galeria">
+            <button ion-button icon-only color="light" (click)="SubirFoto()">
+                <ion-icon ios="ios-images" md="md-images"></ion-icon>
+            </button>
+          </ion-buttons>
+          <ion-buttons start class="camara">
+              <button ion-button color="light" (click)="takeAPicture()" >
+                  <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+                </button>
+            </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>

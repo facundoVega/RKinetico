@@ -1,0 +1,41 @@
+
+
+
+<div class="mensajeError">
+      
+        <h2>{{mensaje}}</h2>
+      
+  </div>
+  <div class="mensajeError2">
+      
+    <h2>{{mensaje}}</h2>
+  
+</div>
+<div class="mensajeError3">
+      
+  <h2>{{mensaje}}</h2>
+
+</div>
+
+<div class="vertical">
+    
+  <div class="cabecera">
+    <h1 id="cab">Relevamiento</h1>
+    <h1 class="cab">Visual</h1>
+  </div>
+  <div class="form">
+    <h2>Iniciar Sesi&oacute;n</h2>
+    <label>Correo:</label><br>
+    <input type="text"  [(ngModel)]="userActual" name="nombre"><br>
+    <label>Contrase&ntilde;a:</label><br>
+    <input type="password"  name="pass" [(ngModel)]="passActual" name="pass" ><br>
+    <button ion-button color="dark" (click)="Login()">Ingresar</button>
+  </div>
+  <div class="usuarios">
+      <button ion-button round color="danger" (click)="setearUser('invitado@gmail.com','222222')">Invitado</button>
+      <button ion-button round color="danger" (click)="setearUser('usuario@gmail.com','333333')">Usuario</button>
+      <button ion-button round color="danger" (click)="setearUser('admin@gmail.com','111111')">Admin</button>
+      <button ion-button round color="danger" (click)="setearUser('tester@gmail.com','555555')">Tester</button>
+      <button ion-button round color="danger" (click)="setearUser('anonimo@gmail.com','444444')">An&oacute;nimo</button>
+  </div>
+</div>

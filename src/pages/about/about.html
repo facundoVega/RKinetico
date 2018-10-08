@@ -1,11 +1,73 @@
+
+
+<div class="alertAbout">
+    <div class="mensajeAbout">
+        <h2>¿Seguro que desea cerrar sesi&oacute;n?</h2>
+        <button ion-button color="light" outline (click)="SetearCerrar('aceptar')">SI</button>
+        <button ion-button color="light" outline (click)="SetearCerrar('cancelar')">NO</button>
+    </div>
+</div>
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+    <ion-toolbar>
+        <ion-buttons start class="iconAtras">
+          <button ion-button icon-only color="light" (click)="IrAtrasPag()">
+            <ion-icon ios="ios-arrow-round-back" md="md-arrow-round-back"></ion-icon>
+          </button>
+        </ion-buttons>
+        <span class="tituloPag" >Gr&aacute;fico</span>
+       
+        <ion-buttons class="iconLogout" end>
+          <button ion-button icon-only color="light" (click)="Logout()" >
+            <ion-icon ios="ios-power"  class="iconLogout" md="md-power"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+ 
+<ion-content no-bounce>
+ 
 
+ 
+      
+        <div class="barras" *ngIf="mostrarBarra" >
+          <h1 class="tituloBarras">Cosas Lindas</h1>
+          <!--canvas #barCanvas baseChart >
+            </canvas-->
+            <!--Aca voy a probar lo del canvas-->
+            <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+          
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+         
+            
+        </div>
+        <div class="fotosGrafico" *ngIf="mostrarBarra">
+       
+            <span *ngIf="mostrarImagen">
+            <img [src]="imagen" >
+            </span>
+          </div>
+      <div class="torta" *ngIf="mostrarTorta">
+      <h1 class="tituloTorta">Cosas Feas</h1>
+      <canvas baseChart
+      [data]="doughnutChartData"
+      [labels]="doughnutChartLabels"
+      [chartType]="doughnutChartType"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"></canvas>
+      
+       </div>
+       <div class="fotosGrafico" *ngIf="mostrarTorta">
+    
+          <span *ngIf="mostrarImagen">
+          <img [src]="imagen" >
+          </span>
+        </div>
+   
 </ion-content>

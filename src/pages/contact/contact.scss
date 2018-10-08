@@ -1,3 +1,268 @@
 page-contact {
+    @import url('https://fonts.googleapis.com/css?family=Merienda|Shadows+Into+Light');
+    .ContenidoHome
+    {
+        overflow:  !important;
+        margin:0;
+        width:100%;
+        height: 100%;
+       
+    
+    
+    }
+    .listaFotos
+    {
+      margin-top:5%;
+    }
+    .slide
+    {
+        height: 100%;
+    }
+    .foto
+    {
+        width:100%;
+       
+        margin-left:0;
+        padding:0;
+        box-sizing:content-box!important;
+    
+        margin-left:5%;
+        margin-bottom:5%;
+    }
+    .laFoto
+    {
+        height:500px!important;
+        width:100%;
+        height: auto;
+        display:block;
+        box-sizing: content-box!important;
+        max-height: 40%;
+    }
+    .fecha
+    {
+        font-size:1.2em;
+        display:block;
+        margin-left:-50%;
+    }
+    .usuario
+    {
+        font-size:1.3em;
+        display:inline;
+        margin-left:-40%;
+        font-family: 'Merienda', cursive;
+    }
+    .userVoto
+    {
+        margin-top:0%;
+        position:relative;
+        background:rgba(0, 0, 0, 0.466);
+        color:white;
+    }
+    .voto
+    {
+       
+        font-size:1.7em;
+        color:white;
+        position:Absolute;
+        right:28%;
+        bottom:10%;
+    }
+    .voto1
+    {   
+        position:Absolute;
+        right: 0;
+        top:-2%;
+    }
+    .cabeceraHome
+    {
+      
+        height: 15%;
+        background-image:url("../assets/imgs/fondo.jpg")!important;
+        margin-top:0%!important;
+        background-size: cover!important;
 
+    }
+
+    .toolbar-background
+    {
+        background-image:url("../assets/imgs/fondo.jpg")!important; 
+        background-size: cover!important;
+    }
+    .cabeceraHome span
+    {
+        font-size:2em;
+        color:white;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        position:absolute;
+        bottom:15%;
+        margin-left:10%;
+        
+    }
+    .spinner
+    {
+        width:100%;
+        height: 100%;
+        display:flex;
+        position: absolute;
+        z-index: 50;
+      
+        align-items:center;
+        justify-content: center;
+    }
+    .miSpinner
+    {
+        animation:pulse 1.2s infinite ease-in-out;
+    }
+    /*-------------------------Animacion------------------------*/
+@-webkit-keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    animation:pulse 1.2s infinite ease-in-out;
+  }
+
+
+/*---------------------------------------------------FIN DE LA ANIMACION---------------------------------------*/  
+    .ocultar
+    {
+        display:none;
+    }  
+
+    .alertContact
+    {
+        position:absolute;
+        z-index:100;
+        width:100%;
+        height:100%;
+        background-color:rgba(3, 3, 3, 0.253);
+        display:none;
+        align-items: center;
+        justify-content: center;
+    }
+    .alertContact button
+    {
+        width:40%;
+    }
+    .mensajeContact
+    {
+        width:70%;
+        background-image:url("../assets/imgs/fondo.jpg");
+        background-size: cover;
+        border-radius: 8px;
+        padding:3%;
+        font-family: 'Merienda', cursive;
+        color:white;
+        text-align: center;
+    } 
+    /*.iconLogout
+    {
+        font-size:2em;
+        color:white;
+        position:absolute;
+        right: 5%;
+        bottom:70%;
+    }*/
+    .iconLogout 
+    {
+        font-size:2em!important;
+    }
+    .graficos
+    {
+        position:absolute;
+        bottom:30%;
+        right:13%;
+    }
+    .graficos ion-icon
+    {
+        font-size:3em!important;
+    }
+    .iconAtras
+    {
+        font-size:4em;
+        color:white;
+        position:absolute;
+        left: 5%;
+        bottom:15%;
+    }
+    .iconAtras ion-icon
+    {
+        font-size:2em!important;
+    }
+    .tituloPag
+    {
+        font-size:2em;
+        margin-left:27%;
+        color:white!important;
+    }
+    .camara
+    {
+        font-size:4em;
+        color:white;
+        position:absolute;
+        left: 15%;
+        bottom:20%;
+    }
+    .camara ion-icon
+    {
+        font-size:2em!important;
+    }
+    .galeria
+    {
+        position:absolute;
+        right:15%;
+    }
+    .galeria ion-icon
+    {
+        font-size:2em!important;
+    }
+    
+
+    @media screen and (max-width:330px)
+    {
+        .tituloPag
+        {
+            margin-left:20%;
+        }
+    }
+
+    @media screen and (max-height:700px)
+    {  .laFoto
+        {
+            height:300px !important ;
+        }
+        
+    }
 }
